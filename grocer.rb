@@ -48,4 +48,6 @@ def checkout(cart, coupons)
   cart = apply_clearance(cart)
   cart.each do |items, item_name|
     total = total + item_name[:price] * item_name[:count]
+  end
+  total
 end
