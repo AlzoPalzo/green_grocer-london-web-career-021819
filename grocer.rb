@@ -45,12 +45,12 @@ def checkout(cart, coupons)
   total = 0 #running total
   cart = consolidate_cart(cart)
   cart = apply_coupons(cart, coupons)
-  cart = apply_clearance(cart)
+  cart = apply_clearance(cart) #applying various discounts
   cart.each do |items, item_name|
     total = total + item_name[:price] * item_name[:count] #total is the current total + price of each itme * the number of each item
   end
   if total > 100
-    total = (total * 0.9).round(2)
+    total = (total * 0.9).round(2) #10% off if over 100
   end
   total
 end
